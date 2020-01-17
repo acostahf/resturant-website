@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
+import { Route, Switch, Redirect } from "react-router-dom";
+import HomePage from "../HomePage/HomePage";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
@@ -25,7 +25,38 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <HomePage
+                user={this.state.user}
+                handlelogout={this.handlelogout}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/signup"
+            render={({ history }) => (
+              <SignupPage
+                history={history}
+                handleSignuporLogin={this.handleSignuporLogin}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/login"
+            render={({ history }) => (
+              <LoginPage
+                history={history}
+                handleSignuporLogin={this.handleSignuporLogin}
+              />
+            )}
+          />
+        </Switch>
       </div>
     );
   }
