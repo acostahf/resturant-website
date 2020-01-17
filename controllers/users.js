@@ -39,5 +39,5 @@ async function signup(req, res) {
 // helper functions
 
 function createJWT(user) {
-  return jwt.sign({ user }, SECRET, { expriesIn: "24h" });
+  return jwt.sign({ user }, SECRET, { expiresIn: "24h" });
 }
