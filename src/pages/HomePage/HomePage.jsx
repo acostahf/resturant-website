@@ -1,19 +1,22 @@
 import React from "react";
+import { BrowswerRouter as Router, Route } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
-import MainList from "../MainLIst";
-import AddMain from "../AddMain";
-import { MainProvider } from "../MainContext";
+import MainList from "../../components/MainList";
+import AddMain from "../AddMainPage/AddMain";
 
 const HomePage = props => {
   return (
-    <MainProvider>
-      <div className="HomePage">
-        <NavBar user={props.user} handlelogout={props.handlelogout} />
-        <MainList />
-        <AddMain />
-      </div>
-    </MainProvider>
+    <div className="HomePage">
+      <NavBar user={props.user} handlelogout={props.handlelogout} />
+      <Route path="/" exact component={MainList} />
+      <Route
+        path="/create"
+        exact
+        component={AddMain}
+        handleAddMain={props.handleAddMain}
+      />
+    </div>
   );
 };
 
