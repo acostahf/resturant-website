@@ -8,6 +8,8 @@ const app = express();
 require("dotenv").config();
 require("./config/database");
 
+var mainsRouter = require("./routes/api/mains");
+
 app.use(logger("dev"));
 app.use(express.json());
 
@@ -17,6 +19,7 @@ app.use(express.static(path.join(__dirname, "build")));
 // Put API routes here, before the "catch all" route
 app.use("/api/users", require("./routes/api/users"));
 app.use(require("./config/auth"));
+app.use("/api/mains", mainsRouter);
 
 app.get("/*", function(req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
