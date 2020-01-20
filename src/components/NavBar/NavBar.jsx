@@ -16,6 +16,9 @@ const NavBar = props => {
       <Link to="/login" className="NavBar-link">
         LOG IN
       </Link>
+      <Link exact to="/create">
+        ADD Main
+      </Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to="/signup" className="NavBar-link">
         SIGN UP
