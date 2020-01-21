@@ -7,6 +7,7 @@ import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
 import * as mainAPI from "../../services/mains-api";
+import * as menuAPI from "../../services/menus-api";
 import AddMainPage from "../AddMainPage/AddMain";
 import NavBar from "../../components/NavBar/NavBar";
 
@@ -15,7 +16,8 @@ class App extends Component {
     super();
     this.state = {
       user: userService.getUser(),
-      mains: []
+      mains: [],
+      menus: []
     };
   }
 
@@ -52,7 +54,11 @@ class App extends Component {
   async componentDidMount() {
     const mains = await mainAPI.getAll();
     this.setState({ mains });
+    const menus = await menuAPI.getAll();
+    this.setState({ menus });
   }
+  // async componentDidMount() {
+  // }
   handlelogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -73,6 +79,7 @@ class App extends Component {
             render={() => (
               <MainList
                 mains={this.state.mains}
+                menus={this.state.menus}
                 handleDeleteMain={this.handleDeleteMain}
               />
             )}
