@@ -9,6 +9,7 @@ require("dotenv").config();
 require("./config/database");
 
 var mainsRouter = require("./routes/api/mains");
+var menusRouter = require("./routes/api/menus");
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, "build")));
 app.use("/api/users", require("./routes/api/users"));
 app.use(require("./config/auth"));
 app.use("/api/mains", mainsRouter);
+app.use("/api/menus", menusRouter);
 
 app.get("/*", function(req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
