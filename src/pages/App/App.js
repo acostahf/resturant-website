@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import HomePage from "../HomePage/HomePage";
+import MainList from "../../components/MainList";
+import EditMainPage from "../EditMainPage/EditMainPage";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
 import * as mainAPI from "../../services/mains-api";
 import AddMainPage from "../AddMainPage/AddMain";
-
-import "./App.css";
+import NavBar from "../../components/NavBar/NavBar";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       user: userService.getUser(),
-      main: []
+      mains: []
     };
   }
 
@@ -65,20 +65,32 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <NavBar user={this.state.user} handlelogout={this.handlelogout} />
         <Switch>
           <Route
             exact
             path="/"
             render={() => (
-              <HomePage
-                user={this.state.user}
-                handlelogout={this.handlelogout}
+              <MainList
+                mains={this.state.mains}
+                handleDeleteMain={this.handleDeleteMain}
               />
             )}
           />
+
           <Route
             path="/create"
             render={() => <AddMainPage handleAddMain={this.handleAddMain} />}
+          />
+          <Route
+            exact
+            path="/edit"
+            render={({ location }) => (
+              <EditMainPage
+                handleUpdateMain={this.handleUpdateMain}
+                location={location}
+              />
+            )}
           />
           <Route
             exact

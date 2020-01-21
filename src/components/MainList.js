@@ -1,40 +1,21 @@
-import React, { Component } from "react";
-import * as mainAPI from "../services/mains-api";
+import React from "react";
+import MainListItem from "../components/MainListItem/MainListItem";
 
-export default class MainList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { mains: [] };
-  }
-
-  async componentDidMount() {
-    const mains = await mainAPI.getAll();
-    this.setState({ mains });
-  }
-
-  render() {
-    const mainRows = this.state.mains.map(main => (
-      <tr>
-        <td>{main.name}</td>
-        <td>{main.price}</td>
-        <td>{main.description}</td>
-      </tr>
-    ));
-    return (
-      <div>
-        <h3>Main Menu</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>{mainRows}</tbody>
-        </table>
+function MainListPage(props) {
+  return (
+    <>
+      <h1>Main List</h1>
+      <div className="MainListPage-grid">
+        {props.mains.map(main => (
+          <MainListItem
+            main={main}
+            handleDeleteMain={props.handleDeleteMain}
+            key={main._id}
+          />
+        ))}
       </div>
-    );
-  }
+    </>
+  );
 }
+
+export default MainListPage;

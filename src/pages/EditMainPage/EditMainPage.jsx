@@ -1,21 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class AddMainPage extends Component {
+class EditMainPage extends Component {
   state = {
-    invalidForm: true,
-    formData: {
-      name: "",
-      price: "",
-      description: ""
-    }
+    invalidForm: false,
+    formData: this.props.location.state.main
   };
 
   formRef = React.createRef();
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.handleAddMain(this.state.formData);
+    this.props.handleUpdateMain(this.state.formData);
   };
 
   handleChange = e => {
@@ -32,14 +28,14 @@ class AddMainPage extends Component {
   render() {
     return (
       <>
-        <h1>Add Main</h1>
+        <h1>Edit Main</h1>
         <form
           ref={this.formRef}
           autoComplete="off"
           onSubmit={this.handleSubmit}
         >
           <div className="form-group">
-            <label>Name </label>
+            <label>Name</label>
             <input
               className="form-control"
               name="name"
@@ -65,14 +61,15 @@ class AddMainPage extends Component {
               name="description"
               value={this.state.formData.description}
               onChange={this.handleChange}
+              required
             />
           </div>
           <button
             type="submit"
-            className="btn"
+            className="btn btn-xs"
             disabled={this.state.invalidForm}
           >
-            ADD Main
+            SAVE main
           </button>
           &nbsp;&nbsp;
           <Link to="/">CANCEL</Link>
@@ -82,4 +79,4 @@ class AddMainPage extends Component {
   }
 }
 
-export default AddMainPage;
+export default EditMainPage;
