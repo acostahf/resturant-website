@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function MainListItem({ main, handleDeleteMain }) {
   return (
     <div>
-      <div className="">
+      <div>
         <h3>{main.name}</h3>
         <h4>{main.price}</h4>
         <p>{main.description}</p>
@@ -22,7 +22,7 @@ function MainListItem({ main, handleDeleteMain }) {
         <Link
           className=""
           to={{
-            pathname: "/edit",
+            pathname: "/AdminPage/edit",
             state: { main }
           }}
         >

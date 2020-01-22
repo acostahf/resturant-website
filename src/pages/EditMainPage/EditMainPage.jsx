@@ -72,7 +72,7 @@ class EditMainPage extends Component {
             SAVE main
           </button>
           &nbsp;&nbsp;
-          <Link to="/">CANCEL</Link>
+          <Link to="/AdminPage">CANCEL</Link>
         </form>
       </>
     );
