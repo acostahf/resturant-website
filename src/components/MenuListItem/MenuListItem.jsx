@@ -6,6 +6,8 @@ function MenuListItem({ menu, handleDeleteMenu }) {
     <div>
       <div className="">
         <h3>{menu.name}</h3>
+        <h4>{menu.main}</h4>
+        <p>{menu.description}</p>
       </div>
       <div>
         {/* <Link
