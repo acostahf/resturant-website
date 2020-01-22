@@ -17,6 +17,9 @@ const NavBar = props => {
     </div>
   ) : (
     <div className="nav">
+      <Link exact to="/" className="flex-sm-fill text-sm-center nav-link">
+        Home
+      </Link>
       <Link
         exact
         to="/AdminPage/main/create"
@@ -30,6 +33,13 @@ const NavBar = props => {
         className="flex-sm-fill text-sm-center nav-link"
       >
         ADD Wine
+      </Link>
+      <Link
+        exact
+        to="/AdminPage"
+        className="flex-sm-fill text-sm-center nav-link"
+      >
+        Admin
       </Link>
       <Link to="/login" className="flex-sm-fill text-sm-center nav-link">
         LOG IN
