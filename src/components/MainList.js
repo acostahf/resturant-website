@@ -1,6 +1,6 @@
 import React from "react";
 import MainListItem from "../components/MainListItem/MainListItem";
-import MenuListItem from "../components/MenuListItem/MenuListItem";
+import WineListItem from "../components/WineListItem/WineListItem";
 
 function MainListPage(props) {
   return (
@@ -15,10 +15,14 @@ function MainListPage(props) {
           />
         ))}
       </div>
-      <h1>menu List</h1>
+      <h1>wine List</h1>
       <div className="MenuListPage-grid">
-        {props.menus.map(menu => (
-          <MenuListItem menu={menu} key={menu._id} />
+        {props.wines.map(wine => (
+          <WineListItem
+            wine={wine}
+            handleDeleteWine={props.handleDeleteWine}
+            key={wine._id}
+          />
         ))}
       </div>
     </>
