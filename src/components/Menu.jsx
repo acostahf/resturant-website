@@ -6,13 +6,13 @@ export default function Menu(props) {
       <h2>Main dishes </h2>
       <div>
         {props.mains.map(main => (
-          <h4>{main.name}</h4>
+          <h4 key={main._id}>{main.name}</h4>
         ))}
       </div>
       <h2>Wine List</h2>
       <div>
         {props.wines.map(wine => (
-          <h4>{wine.name}</h4>
+          <h4 key={wine._id}>{wine.name}</h4>
         ))}
       </div>
     </div>

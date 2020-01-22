@@ -17,6 +17,7 @@ class AddWinePage extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
     this.props.handleAddWine(this.state.formData);
   };
 

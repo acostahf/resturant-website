@@ -9,6 +9,7 @@ import * as wineAPI from "../../services/wines-api";
 import NavBar from "../../components/NavBar/NavBar";
 import About from "../../components/About";
 import Menu from "../../components/Menu";
+import Order from "../../components/Order";
 import AdminPage from "../AdminPage";
 
 class App extends Component {
@@ -17,9 +18,23 @@ class App extends Component {
     this.state = {
       user: userService.getUser(),
       mains: [],
-      wines: []
+      wines: [],
+      order: []
     };
   }
+
+  // onSubmit(e) {
+  //   e.preventDefault();
+  //   // const newOrder = this.setState(state => ({
+  //   //   order: [...state.order, newOrder]
+  //   // }));
+  //   console.log("this is ", this);
+  // }
+  // handleChange(e) {
+  //   e.preventDefault();
+  //   console.log(e);
+  //   console.log(e.target.name);
+  // }
 
   async componentDidMount() {
     const mains = await mainAPI.getAll();
@@ -49,6 +64,13 @@ class App extends Component {
               <div>
                 <About />
                 <Menu mains={this.state.mains} wines={this.state.wines} />
+                <Order
+                  mains={this.state.mains}
+                  wines={this.state.wines}
+                  componentDidMount={this.componentDidMount}
+                  // onSubmit={this.onSubmit}
+                  // handleChange={this.handleChange}
+                />
               </div>
             )}
           />
