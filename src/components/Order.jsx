@@ -68,13 +68,8 @@ class Order extends Component {
   render(props) {
     return (
       <div>
-        {/* <div>
-          {props.wines.map(wine => (
-            <h4 key={wine._id}>{wine.name}</h4>
-          ))}
-        </div> */}
         <div onSubmit={this.handleSubmit}>
-          <h2>select a wine</h2>
+          <h2>SELECT A WINE</h2>
           <select
             value={this.state.userInput}
             onChange={e => this.changeUserInput(e.target.value)}
@@ -98,7 +93,7 @@ class Order extends Component {
           </button>
         </div>
         <div onSubmit={this.handleSubmit}>
-          <h2>select a Main</h2>
+          <h2>SELECT A MAIN</h2>
           <select
             value={this.state.userInput}
             onChange={e => this.changeUserInput(e.target.value)}
@@ -121,11 +116,14 @@ class Order extends Component {
             Submit
           </button>
         </div>
-        <div>
-          {this.state.name.map(n => (
-            <h4 key={n}>{n}</h4>
-          ))}
-          {/* {this.state.name} */}
+        <div class="container-sm">
+          <ul className="list-group">
+            {this.state.name.map(n => (
+              <li className="list-group-item" key={n}>
+                {n}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     );
