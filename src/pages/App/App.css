@@ -12,17 +12,6 @@
   );
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -45,4 +34,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+p {
+  min-height: 10vh;
+}
+.card {
+  width: 50%;
+}
+
+.about {
+  width: 100%;
+}
+.card-text {
+  font-size: 35px;
+}
+
+.card-title {
+  font-size: 50px;
+}
+
+.order-list {
+  width: 50%;
+  padding: 10px 50px 10px 400px;
+  margin: 0px;
 }
