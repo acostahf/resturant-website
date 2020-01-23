@@ -23,6 +23,10 @@ If you are an Admin to the website you will be able to creaet, update, delete th
 
 # Website
 
+<a href="https://imgur.com/Ll80Bx2"><img src="https://i.imgur.com/Ll80Bx2.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/vuu6UmU"><img src="https://i.imgur.com/vuu6UmU.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/YRIRqcN"><img src="https://i.imgur.com/YRIRqcN.png" title="source: imgur.com" /></a>
+
 # Future Enhancements
 
 Make the website a template to have a restaurant add their info and images to get a website up in a timely manner.
