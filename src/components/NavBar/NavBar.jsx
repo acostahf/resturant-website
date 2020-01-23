@@ -6,6 +6,7 @@ import "./NavBar.css";
 const NavBar = props => {
   let nav = props.user ? (
     <div className="nav">
+      <h1 className="NavBar-title">Cupcakes N Wine</h1>
       <Link
         to="/AdminPage/main/create"
         className="flex-sm-fill text-sm-center nav-link"
@@ -29,10 +30,11 @@ const NavBar = props => {
         LOG OUT
       </Link>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <h4 className="NavBar-welcome">WELCOME BACK, {props.user.name}</h4>
+      {/* <h4 className="NavBar-welcome">WELCOME BACK, {props.user.name}</h4> */}
     </div>
   ) : (
     <div className="nav">
+      <h1 className="NavBar-title">Cupcakes N Wine</h1>
       <Link to="/" className="flex-sm-fill text-sm-center nav-link">
         Home
       </Link>

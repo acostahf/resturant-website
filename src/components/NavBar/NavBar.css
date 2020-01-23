@@ -8,5 +8,9 @@
   margin: 0 10px;
 }
 .NavBar-welcome {
-  color: grey;
+  color: whitesmoke;
+}
+
+.NavBar-title {
+  color: whitesmoke;
 }
