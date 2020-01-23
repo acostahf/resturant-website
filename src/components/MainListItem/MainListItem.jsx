@@ -3,32 +3,27 @@ import { Link } from "react-router-dom";
 
 function MainListItem({ main, handleDeleteMain }) {
   return (
-    <div>
-      <div>
-        <h3>{main.name}</h3>
-        <h4>{main.price}</h4>
-        <p>{main.description}</p>
-      </div>
-      <div>
-        {/* <Link
-          className=""
-          to={{
-            pathname: "/details",
-            state: { main }
-          }}
-        >
-          DETAILS
-        </Link> */}
+    <div className="card" style={{ width: "18rem" }}>
+      <div className="card-body">
+        <h5 className="card-title">{main.name}</h5>
+        <p className="card-text">Price: ${main.price}</p>
+        <p className="card-text">
+          Description:
+          {main.description}
+        </p>
         <Link
-          className=""
           to={{
             pathname: "/AdminPage/edit",
             state: { main }
           }}
+          class="btn btn-primary"
         >
           EDIT
         </Link>
-        <button className="" onClick={() => handleDeleteMain(main._id)}>
+        <button
+          className="btn btn-danger"
+          onClick={() => handleDeleteMain(main._id)}
+        >
           DELETE
         </button>
       </div>
