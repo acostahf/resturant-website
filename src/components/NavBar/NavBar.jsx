@@ -7,6 +7,9 @@ const NavBar = props => {
   let nav = props.user ? (
     <div className="nav">
       <h1 className="NavBar-title">Cupcakes N Wine</h1>
+      <Link to="/" className="flex-sm-fill text-sm-center nav-link">
+        Home
+      </Link>
       <Link
         to="/AdminPage/main/create"
         className="flex-sm-fill text-sm-center nav-link"
@@ -48,7 +51,6 @@ const NavBar = props => {
       </Link>
     </div>
   );
-  // let nav = <div>something </div>;
 
   return <div className="navbar navbar-dark bg-dark">{nav}</div>;
 };

@@ -4,7 +4,7 @@ export default function Menu(props) {
   return (
     <div className="row row-cols-1 row-cols-md-2">
       <div className="card">
-        <h5 className="card-header">MAIN DISHES</h5>
+        <h5 className="card-header">Cupcakes</h5>
         <div className="card-body">
           {props.mains.map(main => (
             <h5 className="card-title" key={main._id}>
