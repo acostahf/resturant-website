@@ -18,7 +18,9 @@ Node.js
 
 # Wireframes
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="BOJalnq"><a href="https://imgur.com/BOJalnq">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<a href="https://imgur.com/BOJalnq"><img src="https://i.imgur.com/BOJalnq.png" title="source: imgur.com" /></a>
+
+<!-- <blockquote class="imgur-embed-pub" lang="en" data-id="BOJalnq"><a href="https://imgur.com/BOJalnq">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> -->
 
 # Website
 
