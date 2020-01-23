@@ -1,25 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import "../../pages/App/App.css";
 import "./NavBar.css";
 
 const NavBar = props => {
   let nav = props.user ? (
-    <div>
-      <Link
-        to=""
-        className="flex-sm-fill text-sm-center nav-link"
-        onClick={props.handlelogout}
-      >
-        LOG OUT
-      </Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <span className="NavBar-welcome">WELCOME, {props.user.name}</span>
-    </div>
-  ) : (
     <div className="nav">
-      <Link to="/" className="flex-sm-fill text-sm-center nav-link">
-        Home
-      </Link>
       <Link
         to="/AdminPage/main/create"
         className="flex-sm-fill text-sm-center nav-link"
@@ -35,6 +21,22 @@ const NavBar = props => {
       <Link to="/AdminPage" className="flex-sm-fill text-sm-center nav-link">
         Admin
       </Link>
+      <Link
+        to=""
+        className="flex-sm-fill text-sm-center nav-link"
+        onClick={props.handlelogout}
+      >
+        LOG OUT
+      </Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <h4 className="NavBar-welcome">WELCOME BACK, {props.user.name}</h4>
+    </div>
+  ) : (
+    <div className="nav">
+      <Link to="/" className="flex-sm-fill text-sm-center nav-link">
+        Home
+      </Link>
+
       <Link to="/login" className="flex-sm-fill text-sm-center nav-link">
         LOG IN
       </Link>
