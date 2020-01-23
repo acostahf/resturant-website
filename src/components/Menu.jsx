@@ -2,8 +2,9 @@ import React from "react";
 
 export default function Menu(props) {
   return (
-    <div className="row row-cols-1 row-cols-md-2">
-      <div className="card">
+    <div>
+      {/* <div className="row row-cols-1 row-cols-md-2"> */}
+      <div className="card mx-auto ">
         <h5 className="card-header">Cupcakes</h5>
         <div className="card-body">
           {props.mains.map(main => (
@@ -15,7 +16,7 @@ export default function Menu(props) {
     <a href="#" className="btn btn-primary">Go somewhere</a> */}
         </div>
       </div>
-      <div className="card">
+      <div className="card mx-auto">
         <h5 className="card-header">WINE LIST</h5>
         <div className="card-body">
           {props.wines.map(wine => (
@@ -28,5 +29,6 @@ export default function Menu(props) {
         </div>
       </div>
     </div>
+    // </div>
   );
 }

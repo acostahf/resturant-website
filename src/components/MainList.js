@@ -8,7 +8,6 @@ function MainListPage(props) {
       <h1>MAIN LIST</h1>
 
       <div>
-        {/* <div className="card-group"> */}
         {props.mains.map(main => (
           <div className="card mx-auto">
             <div className="card-body">
@@ -21,7 +20,6 @@ function MainListPage(props) {
           </div>
         ))}
       </div>
-      {/* </div> */}
 
       <h1>WINE LIST</h1>
       <div className="">

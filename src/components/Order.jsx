@@ -67,10 +67,12 @@ class Order extends Component {
 
   render(props) {
     return (
-      <div>
+      <div className="card  bg-secondary mx-auto ">
+        <h1>Create your order now.</h1>
         <div onSubmit={this.handleSubmit}>
           <h2>SELECT A WINE</h2>
           <select
+            className="form-control"
             value={this.state.userInput}
             onChange={e => this.changeUserInput(e.target.value)}
           >
@@ -86,6 +88,7 @@ class Order extends Component {
           </select>
 
           <button
+            className="btn btn-success"
             onSubmit={this.handleSubmit}
             onClick={() => this.addToList(this.state.userInput)}
           >
@@ -95,6 +98,7 @@ class Order extends Component {
         <div onSubmit={this.handleSubmit}>
           <h2>SELECT A MAIN</h2>
           <select
+            className="form-control"
             value={this.state.userInput}
             onChange={e => this.changeUserInput(e.target.value)}
           >
@@ -110,6 +114,7 @@ class Order extends Component {
           </select>
 
           <button
+            className="btn btn-success"
             onSubmit={this.handleSubmit}
             onClick={() => this.addToList(this.state.userInput)}
           >
