@@ -10,11 +10,11 @@ If you are an Admin to the website you will be able to creaet, update, delete th
 
 ## Technology
 
-Mongoose
-MongoDB
-Express
-React
-Node.js
+1. Mongoose
+2. MongoDB
+3. Express
+4. React
+5. Node.js
 
 # Wireframes
 
@@ -27,11 +27,11 @@ Node.js
 
 Make the website a template to have a restaurant add their info and images to get a website up in a timely manner.
 
-Continue styling the app
-Allow users to save their order to their login profile
-Allow users to see their total for the order they created
-Allow users to contact the restaurants email.
-Allow users create reservations
-Allow users to leave a review
-Have mulitple menus and items able to click for more details with images
-Allow the admin to fully customize the site
+1. Continue styling the app
+2. Allow users to save their order to their login profile
+3. Allow users to see their total for the order they created
+4. Allow users to contact the restaurants email.
+5. Allow users create reservations
+6. Allow users to leave a review
+7. Have mulitple menus and items able to click for more details with images
+8. Allow the admin to fully customize the site
