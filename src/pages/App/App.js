@@ -11,6 +11,7 @@ import About from "../../components/About";
 import Menu from "../../components/Menu";
 import Order from "../../components/Order";
 import AdminPage from "../AdminPage";
+import Contact from "../../components/Contact";
 
 class App extends Component {
   constructor() {
@@ -71,6 +72,7 @@ class App extends Component {
                   // onSubmit={this.onSubmit}
                   // handleChange={this.handleChange}
                 />
+                <Contact />
               </div>
             )}
           />
