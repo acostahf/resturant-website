@@ -63,16 +63,16 @@ class App extends Component {
             path="/"
             render={() => (
               <div>
-                {/* <About /> */}
-                {/* <Menu mains={this.state.mains} wines={this.state.wines} /> */}
-                {/* <Order
+                <About />
+                {/* <Menu mains={this.state.mains} wines={this.state.wines} />
+                <Order 
                   mains={this.state.mains}
                   wines={this.state.wines}
                   componentDidMount={this.componentDidMount}
-                  // onSubmit={this.onSubmit}
-                  // handleChange={this.handleChange}
-                />
-                <Contact /> */}
+                  onSubmit={this.onSubmit}
+                   handleChange={this.handleChange}
+                /> */}
+                <Contact />
               </div>
             )}
           />

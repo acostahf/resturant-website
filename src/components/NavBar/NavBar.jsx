@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 auto",
   },
   appbar: {
-    background: "none",
+    background: "#607d8b",
   },
   appbarTitle: {
     color: "#fff",
