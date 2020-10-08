@@ -4,11 +4,11 @@ import WineListItem from "../components/WineListItem/WineListItem";
 
 function MainListPage(props) {
   return (
-    <>
+    <div>
       <h1>MAIN LIST</h1>
 
       <div>
-        {props.mains.map(main => (
+        {props.mains.map((main) => (
           <div className="card mx-auto">
             <div className="card-body">
               <MainListItem
@@ -23,7 +23,7 @@ function MainListPage(props) {
 
       <h1>WINE LIST</h1>
       <div className="">
-        {props.wines.map(wine => (
+        {props.wines.map((wine) => (
           <div className="card mx-auto">
             <div className="card-body">
               <WineListItem
@@ -35,7 +35,7 @@ function MainListPage(props) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import SignupPage from "../SignupPage/SignupPage";
@@ -20,7 +21,7 @@ class App extends Component {
       user: userService.getUser(),
       mains: [],
       wines: [],
-      order: []
+      order: [],
     };
   }
 
@@ -52,7 +53,6 @@ class App extends Component {
   handleSignuporLogin = () => {
     this.setState({ user: userService.getUser() });
   };
-
   render() {
     return (
       <div className="App">
@@ -63,20 +63,23 @@ class App extends Component {
             path="/"
             render={() => (
               <div>
-                <About />
-                <Menu mains={this.state.mains} wines={this.state.wines} />
-                <Order
+                {/* <About /> */}
+                {/* <Menu mains={this.state.mains} wines={this.state.wines} /> */}
+                {/* <Order
                   mains={this.state.mains}
                   wines={this.state.wines}
                   componentDidMount={this.componentDidMount}
                   // onSubmit={this.onSubmit}
                   // handleChange={this.handleChange}
                 />
-                <Contact />
+                <Contact /> */}
               </div>
             )}
           />
-          <Route path="/AdminPage" render={props => <AdminPage {...props} />} />
+          <Route
+            path="/AdminPage"
+            render={(props) => <AdminPage {...props} />}
+          />
           <Route
             exact
             path="/signup"

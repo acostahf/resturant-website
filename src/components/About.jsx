@@ -5,12 +5,6 @@ export default class About extends Component {
     return (
       <div className="about">
         <div className="about card bg-dark text-white">
-          <img
-            src={
-              "https://images.pexels.com/photos/776538/pexels-photo-776538.jpeg?cs=srgb&dl=restaurant-interior-776538.jpg&fm=jpg"
-            }
-            className="card-img"
-          />
           <div className="card-img-overlay">
             <h5 className="card-title">ABOUT US</h5>
             <p className="card-text">
