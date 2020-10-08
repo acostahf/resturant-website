@@ -1,7 +1,8 @@
-import React from "react";
-import { AppBar, IconButton, Toolbar } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { AppBar, IconButton, Toolbar, Collapse } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import SortIcon from "@material-ui/icons/Sort";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import Typography from "@material-ui/core/Typography";
 import Tabs from "@material-ui/core/Tabs";
@@ -16,11 +17,16 @@ import "./NavBar.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
-    backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/ava-toast.jpg"})`,
+    backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/bar-pic.jpg"})`,
     backgroundSize: "cover",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    fontFamily: "Signika",
   },
   icon: {
-    color: "black",
+    color: "#fff",
     fontSize: "2rem",
   },
   appbarWrapper: {
@@ -31,22 +37,52 @@ const useStyles = makeStyles((theme) => ({
     background: "none",
   },
   appbarTitle: {
-    color: "black",
+    color: "#fff",
     flexGrow: 1,
+  },
+  container: {
+    textAlign: "center",
+  },
+  title: {
+    color: "#fff",
+    fontSize: "4.5rem",
+  },
+  goDown: {
+    color: "#fff",
+    fontSize: "4rem",
   },
 }));
 export default function NavBar() {
   const classes = useStyles();
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    setChecked(true);
+  }, []);
   return (
     <div className={classes.root}>
       <AppBar className={classes.appbar}>
         <Toolbar className={classes.appbarWrapper}>
-          <h1 className={classes.appbarTitle}>My Foodtruck</h1>
+          <h1 className={classes.appbarTitle}>401st Cafe</h1>
           <IconButton>
             <SortIcon className={classes.icon} />
           </IconButton>
         </Toolbar>
       </AppBar>
+
+      <Collapse
+        in={checked}
+        {...(checked ? { timeout: 2000 } : {})}
+        collapsedHeight={50}
+      >
+        <div className={classes.container}>
+          <h1 className={classes.title}>
+            Welcome to <br /> 401st Cafe!
+          </h1>
+          <IconButton>
+            <ExpandMoreIcon className={classes.goDown} />
+          </IconButton>
+        </div>
+      </Collapse>
     </div>
   );
 }
