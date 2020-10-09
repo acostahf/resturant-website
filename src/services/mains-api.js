@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:4000/api/mains";
+const BASE_URL = "/api/mains";
 
 export function getAll() {
   return fetch(BASE_URL).then((res) => res.json());
