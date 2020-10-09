@@ -137,24 +137,16 @@ class Order extends Component {
           <Grid item xs={6}>
             <Card className={classes.root} variant="outlined">
               <CardContent>
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  Wines by the Glass
-                </Typography>
-                <Typography variant="h5" component="h2">
-                  kdslj
-                </Typography>
-                <Typography className={classes.pos} color="textSecondary">
-                  adjective
-                </Typography>
-                <Typography variant="body2" component="p">
-                  well meaning and kindly.
-                  <br />
-                  {'"a benevolent smile"'}
-                </Typography>
+                <div>
+                  <h3>Your Order</h3>
+                  <ul>
+                    {this.state.name.map((n) => (
+                      <li className="list-group-item" key={n}>
+                        {n}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </CardContent>
               {/* <CardActions>
                 <Button size="small">Learn More</Button>

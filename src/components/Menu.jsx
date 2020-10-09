@@ -1,27 +1,44 @@
 import React from "react";
+import { Button } from "@material-ui/core";
 
 export default function Menu(props) {
   return (
     <div>
       <div>
-        <h1>Food Items</h1>
+        <h3>Food Items</h3>
         <ul>
-          <li>
-            {props.mains.map((main) => (
-              <h5 key={main._id}>{main.name}</h5>
-            ))}
-          </li>
+          {props.mains.map((main) => (
+            <li key={main._id}>
+              {main.name}
+              <Button
+                variant="contained"
+                color="primary"
+                onSubmit={this.handleSubmit}
+                onClick={() => this.addToList(this.state.userInput)}
+              >
+                ADD
+              </Button>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div>
-        <h1>WINE LIST</h1>
+        <h3>WINE LIST</h3>
         <ul>
-          <li>
-            {props.wines.map((wine) => (
-              <h5 key={wine._id}>{wine.name}</h5>
-            ))}
-          </li>
+          {props.wines.map((wine) => (
+            <li key={wine._id}>
+              {wine.name}
+              <Button
+                variant="contained"
+                color="primary"
+                onSubmit={this.handleSubmit}
+                onClick={() => this.addToList(this.state.userInput)}
+              >
+                ADD
+              </Button>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
