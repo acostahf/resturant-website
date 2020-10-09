@@ -3,32 +3,27 @@ import React from "react";
 export default function Menu(props) {
   return (
     <div>
-      {/* <div className="row row-cols-1 row-cols-md-2"> */}
-      <div className="card mx-auto ">
-        <h5 className="card-header">Cupcakes</h5>
-        <div className="card-body">
-          {props.mains.map(main => (
-            <h5 className="card-title" key={main._id}>
-              {main.name}
-            </h5>
-          ))}
-          {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a> */}
-        </div>
+      <div>
+        <h1>Food Items</h1>
+        <ul>
+          <li>
+            {props.mains.map((main) => (
+              <h5 key={main._id}>{main.name}</h5>
+            ))}
+          </li>
+        </ul>
       </div>
-      <div className="card mx-auto">
-        <h5 className="card-header">WINE LIST</h5>
-        <div className="card-body">
-          {props.wines.map(wine => (
-            <h5 className="card-title" key={wine._id}>
-              {wine.name}
-            </h5>
-          ))}
-          {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a> */}
-        </div>
+
+      <div>
+        <h1>WINE LIST</h1>
+        <ul>
+          <li>
+            {props.wines.map((wine) => (
+              <h5 key={wine._id}>{wine.name}</h5>
+            ))}
+          </li>
+        </ul>
       </div>
     </div>
-    // </div>
   );
 }
