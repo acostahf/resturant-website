@@ -64,14 +64,14 @@ class App extends Component {
             render={() => (
               <div>
                 <About />
-                {/* <Menu mains={this.state.mains} wines={this.state.wines} />
-                <Order 
+                <Menu mains={this.state.mains} wines={this.state.wines} />
+                <Order
                   mains={this.state.mains}
                   wines={this.state.wines}
                   componentDidMount={this.componentDidMount}
                   onSubmit={this.onSubmit}
-                   handleChange={this.handleChange}
-                /> */}
+                  handleChange={this.handleChange}
+                />
                 <Contact />
               </div>
             )}

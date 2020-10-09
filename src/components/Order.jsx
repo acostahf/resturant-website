@@ -2,6 +2,57 @@ import React, { Component } from "react";
 import * as wineAPI from "../services/wines-api";
 import * as mainAPI from "../services/mains-api";
 
+import { Button, Grid } from "@material-ui/core";
+// import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+
+import { withStyles } from "@material-ui/core/styles";
+
+// const styles = (theme) => ({
+//   button: {
+//     margin: theme.spacing.unit,
+//   },
+//   input: {
+//     display: "none",
+//   },
+//   root: {
+//     minWidth: 275,
+//   },
+//   bullet: {
+//     display: "inline-block",
+//     margin: "0 2px",
+//     transform: "scale(0.8)",
+//   },
+//   title: {
+//     fontSize: 14,
+//   },
+//   pos: {
+//     marginBottom: 12,
+//   },
+// });
+const useStyles = (theme) => ({
+  root: {
+    minWidth: 275,
+    display: "flex",
+    justifyContent: "center",
+    alignItem: "center",
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
+
 // function Order(props) {
 //   return (
 //     <>
@@ -35,13 +86,13 @@ class Order extends Component {
       userInput: "",
       name: [],
       wines: [],
-      mains: []
+      mains: [],
     };
   }
 
   changeUserInput(input) {
     this.setState({
-      userInput: input
+      userInput: input,
     });
   }
   addToList(input) {
@@ -51,10 +102,10 @@ class Order extends Component {
 
     this.setState({
       name: listArry,
-      userInput: ""
+      userInput: "",
     });
   }
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefalult();
   };
 
@@ -66,19 +117,78 @@ class Order extends Component {
   }
 
   render(props) {
+    const { classes } = this.props;
+
     return (
-      <div className="card  bg-secondary mx-auto ">
+      <div className="">
+        <Grid container spacing={3}>
+          <Grid item xs={6}>
+            <Card className={classes.root} variant="outlined">
+              <CardContent>
+                <Typography
+                  className={classes.title}
+                  color="textSecondary"
+                  gutterBottom
+                >
+                  Food Items
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  kdslj
+                </Typography>
+                <Typography className={classes.pos} color="textSecondary">
+                  adjective
+                </Typography>
+                <Typography variant="body2" component="p">
+                  well meaning and kindly.
+                  <br />
+                  {'"a benevolent smile"'}
+                </Typography>
+              </CardContent>
+              {/* <CardActions>
+                <Button size="small">Learn More</Button>
+              </CardActions> */}
+            </Card>
+          </Grid>
+          <Grid item xs={6}>
+            <Card className={classes.root} variant="outlined">
+              <CardContent>
+                <Typography
+                  className={classes.title}
+                  color="textSecondary"
+                  gutterBottom
+                >
+                  Wines by the Glass
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  kdslj
+                </Typography>
+                <Typography className={classes.pos} color="textSecondary">
+                  adjective
+                </Typography>
+                <Typography variant="body2" component="p">
+                  well meaning and kindly.
+                  <br />
+                  {'"a benevolent smile"'}
+                </Typography>
+              </CardContent>
+              {/* <CardActions>
+                <Button size="small">Learn More</Button>
+              </CardActions> */}
+            </Card>
+          </Grid>
+        </Grid>
+
         <h1>Create your order now.</h1>
         <div onSubmit={this.handleSubmit}>
           <h2>SELECT A WINE</h2>
           <select
             className="form-control"
             value={this.state.userInput}
-            onChange={e => this.changeUserInput(e.target.value)}
+            onChange={(e) => this.changeUserInput(e.target.value)}
           >
             <option value="choose a wine ">choose a wine</option>
 
-            {this.state.wines.map(function(wine) {
+            {this.state.wines.map(function (wine) {
               return (
                 <option key={wine.name} value={wine.name}>
                   {wine.name}
@@ -86,25 +196,33 @@ class Order extends Component {
               );
             })}
           </select>
+          <Button
+            variant="contained"
+            color="primary"
+            onSubmit={this.handleSubmit}
+            onClick={() => this.addToList(this.state.userInput)}
+          >
+            ADD
+          </Button>
 
-          <button
+          {/* <button
             className="btn btn-success"
             onSubmit={this.handleSubmit}
             onClick={() => this.addToList(this.state.userInput)}
           >
             Submit
-          </button>
+          </button> */}
         </div>
         <div onSubmit={this.handleSubmit}>
           <h2>SELECT A MAIN</h2>
           <select
             className="form-control"
             value={this.state.userInput}
-            onChange={e => this.changeUserInput(e.target.value)}
+            onChange={(e) => this.changeUserInput(e.target.value)}
           >
             <option value="choose a main ">choose a main</option>
 
-            {this.state.mains.map(function(main) {
+            {this.state.mains.map(function (main) {
               return (
                 <option key={main.name} value={main.name}>
                   {main.name}
@@ -123,7 +241,7 @@ class Order extends Component {
         </div>
         <div class="container-sm">
           <ul className="list-group">
-            {this.state.name.map(n => (
+            {this.state.name.map((n) => (
               <li className="list-group-item" key={n}>
                 {n}
               </li>
@@ -135,4 +253,4 @@ class Order extends Component {
   }
 }
 
-export default Order;
+export default withStyles(useStyles)(Order);
