@@ -8,17 +8,7 @@ export default function Menu(props) {
         <h3>Food Items</h3>
         <ul>
           {props.mains.map((main) => (
-            <li key={main._id}>
-              {main.name}
-              <Button
-                variant="contained"
-                color="primary"
-                onSubmit={this.handleSubmit}
-                onClick={() => this.addToList(this.state.userInput)}
-              >
-                ADD
-              </Button>
-            </li>
+            <li key={main._id}>{main.name}</li>
           ))}
         </ul>
       </div>
@@ -27,17 +17,7 @@ export default function Menu(props) {
         <h3>WINE LIST</h3>
         <ul>
           {props.wines.map((wine) => (
-            <li key={wine._id}>
-              {wine.name}
-              <Button
-                variant="contained"
-                color="primary"
-                onSubmit={this.handleSubmit}
-                onClick={() => this.addToList(this.state.userInput)}
-              >
-                ADD
-              </Button>
-            </li>
+            <li key={wine._id}>{wine.name}</li>
           ))}
         </ul>
       </div>

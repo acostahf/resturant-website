@@ -127,7 +127,58 @@ class Order extends Component {
           <Grid item xs={6}>
             <Card className={classes.root} variant="outlined">
               <CardContent>
-                <Menu mains={this.state.mains} wines={this.state.wines} />
+                <div>
+                  <div
+                    value={this.state.userInput}
+                    onChange={(e) => this.changeUserInput(e.target.value)}
+                  >
+                    <h3>Wine List</h3>
+                    <ul>
+                      {this.state.wines.map(function (wine) {
+                        return (
+                          <li key={wine.name} value={wine.name}>
+                            {wine.name}
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              onSubmit={this.handleSubmit}
+                              onClick={() =>
+                                this.addToList(this.state.userInput)
+                              }
+                            >
+                              ADD
+                            </Button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                  <div
+                    value={this.state.userInput}
+                    onChange={(e) => this.changeUserInput(e.target.value)}
+                  >
+                    <h3>Food Items</h3>
+                    <ul>
+                      {this.state.mains.map(function (main) {
+                        return (
+                          <li key={main.name} value={main.name}>
+                            {main.name}
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              onSubmit={this.handleSubmit}
+                              onClick={() =>
+                                this.addToList(this.state.userInput)
+                              }
+                            >
+                              ADD
+                            </Button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
               </CardContent>
               {/* <CardActions>
                 <Button size="small">Learn More</Button>
