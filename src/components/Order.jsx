@@ -3,7 +3,7 @@ import * as wineAPI from "../services/wines-api";
 import * as mainAPI from "../services/mains-api";
 import Menu from "../components/Menu";
 
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid, Checkbox } from "@material-ui/core";
 // import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -120,6 +120,7 @@ class Order extends Component {
 
   render(props) {
     const { classes } = this.props;
+    const [checked, setChecked] = React.useState(true);
 
     return (
       <div className="">
@@ -129,9 +130,11 @@ class Order extends Component {
               <CardContent>
                 <div>
                   <div onSubmit={this.handleSubmit}>
-                    <div
+                    <Checkbox
+                      checked={checked}
                       value={this.state.userInput}
                       onChange={(e) => this.changeUserInput(e.target.value)}
+                      inputProps={{ "aria-label": "primary checkbox" }}
                     >
                       <h3>Wine List</h3>
                       <ul>
@@ -153,12 +156,14 @@ class Order extends Component {
                           );
                         })}
                       </ul>
-                    </div>
+                    </Checkbox>
                   </div>
                   <div onSubmit={this.handleSubmit}>
-                    <div
+                    <Checkbox
+                      checked={checked}
                       value={this.state.userInput}
                       onChange={(e) => this.changeUserInput(e.target.value)}
+                      inputProps={{ "aria-label": "primary checkbox" }}
                     >
                       <h3>Food Items</h3>
                       <ul>
@@ -180,7 +185,7 @@ class Order extends Component {
                           );
                         })}
                       </ul>
-                    </div>
+                    </Checkbox>
                   </div>
                 </div>
               </CardContent>
