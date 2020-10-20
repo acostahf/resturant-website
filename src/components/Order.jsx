@@ -83,12 +83,13 @@ const useStyles = (theme) => ({
 class Order extends Component {
   constructor() {
     super();
-
+    // this.handleCheck = this.handleCheck.bind(this);
     this.state = {
       userInput: "",
       name: [],
       wines: [],
       mains: [],
+      checkedValues: [],
     };
   }
 
@@ -120,7 +121,6 @@ class Order extends Component {
 
   render(props) {
     const { classes } = this.props;
-    const [checked, setChecked] = React.useState(true);
 
     return (
       <div className="">
@@ -130,62 +130,55 @@ class Order extends Component {
               <CardContent>
                 <div>
                   <div onSubmit={this.handleSubmit}>
-                    <Checkbox
-                      checked={checked}
-                      value={this.state.userInput}
-                      onChange={(e) => this.changeUserInput(e.target.value)}
-                      inputProps={{ "aria-label": "primary checkbox" }}
-                    >
-                      <h3>Wine List</h3>
-                      <ul>
-                        {this.state.wines.map(function (wine) {
-                          return (
-                            <li key={wine.name} value={wine.name}>
-                              {wine.name}
-                              <Button
-                                variant="contained"
-                                color="primary"
-                                onSubmit={this.handleSubmit}
-                                onClick={() =>
-                                  this.addToList(this.state.userInput)
-                                }
-                              >
-                                ADD
-                              </Button>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </Checkbox>
+                    <h3>Wine List</h3>
+                    <ul>
+                      {this.state.wines.map(function (wine) {
+                        return (
+                          <li key={wine.name} value={wine.name}>
+                            {wine.name}
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              onSubmit={this.handleSubmit}
+                              onClick={() =>
+                                this.addToList(this.state.userInput)
+                              }
+                            >
+                              ADD
+                            </Button>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                   <div onSubmit={this.handleSubmit}>
-                    <Checkbox
-                      checked={checked}
+                    {/* <Checkbox
+                      // checked={checked}
                       value={this.state.userInput}
                       onChange={(e) => this.changeUserInput(e.target.value)}
                       inputProps={{ "aria-label": "primary checkbox" }}
-                    >
-                      <h3>Food Items</h3>
-                      <ul>
-                        {this.state.mains.map(function (main) {
-                          return (
-                            <li key={main.name} value={main.name}>
-                              {main.name}
-                              <Button
-                                variant="contained"
-                                color="primary"
-                                onSubmit={this.handleSubmit}
-                                onClick={() =>
-                                  this.addToList(this.state.userInput)
-                                }
-                              >
-                                ADD
-                              </Button>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </Checkbox>
+                    > */}
+                    <h3>Food Items</h3>
+                    <ul>
+                      {this.state.mains.map(function (main) {
+                        return (
+                          <li key={main.name} value={main.name}>
+                            {main.name}
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              onSubmit={this.handleSubmit}
+                              onClick={() =>
+                                this.addToList(this.state.userInput)
+                              }
+                            >
+                              ADD
+                            </Button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    {/* </Checkbox> */}
                   </div>
                 </div>
               </CardContent>
