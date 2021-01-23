@@ -63,6 +63,9 @@ export default function NavBar() {
       <AppBar className={classes.appbar}>
         <Toolbar className={classes.appbarWrapper}>
           <h1 className={classes.appbarTitle}>401st Cafe</h1>
+          <Link to="/" className="flex-sm-fill text-sm-center nav-link">
+         Home
+       </Link>
           <IconButton>
             <SortIcon className={classes.icon} />
           </IconButton>
