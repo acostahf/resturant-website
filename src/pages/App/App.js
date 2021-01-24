@@ -14,6 +14,7 @@ import Menu from "../../components/Menu";
 import Order from "../../components/Order";
 import AdminPage from "../AdminPage";
 import Contact from "../../components/Contact";
+import Entrees from "../../components/Entrees";
 
 class App extends Component {
   constructor() {
@@ -66,6 +67,7 @@ class App extends Component {
             render={() => (
               <div>
                 <About />
+                <Entrees />
                 <Menu mains={this.state.mains} wines={this.state.wines} />
                 <Order
                   mains={this.state.mains}
