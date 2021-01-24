@@ -8,6 +8,7 @@ import userService from "../../utils/userService";
 import * as mainAPI from "../../services/mains-api";
 import * as wineAPI from "../../services/wines-api";
 import NavBar from "../../components/NavBar/NavBar";
+import Hero from "../../components/Hero";
 import About from "../../components/About";
 import Menu from "../../components/Menu";
 import Order from "../../components/Order";
@@ -57,6 +58,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar user={this.state.user} handlelogout={this.handlelogout} />
+        <Hero />
         <Switch>
           <Route
             exact
