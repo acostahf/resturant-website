@@ -1,6 +1,6 @@
 import React from "react";
-
-import { Button, Container, Box, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { Container, Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     // alignItems: "center",
-    backgroundColor: "#414547",
+    // backgroundColor: "#414547",
     backgroundBlendMode: "overlay",
     // color: "#fff",
   },
@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   h1: {
     margin: 20,
+    color: "#fff",
   },
 }));
 
@@ -41,13 +42,28 @@ const Hero = () => {
     <div className={classes.root}>
       <Container className={classes.container}>
         <Box className={classes.content}>
-          <Typography variant="h1" className={classes.h1}>
+          <Typography
+            component={Link}
+            to="/entrees"
+            variant="h1"
+            className={classes.h1}
+          >
             EAT
           </Typography>
-          <Typography variant="h1" className={classes.h1}>
+          <Typography
+            component={Link}
+            to="/Wines"
+            variant="h1"
+            className={classes.h1}
+          >
             DRINK
           </Typography>
-          <Typography variant="h1" className={classes.h1}>
+          <Typography
+            component={Link}
+            to="/about"
+            variant="h1"
+            className={classes.h1}
+          >
             VISIT
           </Typography>
         </Box>

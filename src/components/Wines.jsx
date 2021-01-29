@@ -1,14 +1,6 @@
 import React from "react";
 
-import {
-  Button,
-  Container,
-  Box,
-  Typography,
-  Grid,
-  Card,
-  CardMedia,
-} from "@material-ui/core";
+import { Container, Box, Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Entrees = () => {
+const Wines = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -62,7 +54,11 @@ const Entrees = () => {
         <Grid container>
           <Grid xs={12} sm={12} md={6} lg={6} className={classes.imgContainer}>
             <Box className={classes.box}>
-              <img className={classes.media} src="/assets/wine-pic.jpg" />
+              <img
+                className={classes.media}
+                src="/assets/wine-pic.jpg"
+                alt=""
+              />
             </Box>
           </Grid>
           <Grid xs={12} sm={12} md={6} lg={6}>
@@ -73,30 +69,19 @@ const Entrees = () => {
               <Typography variant="subtitle" className={classes.des}>
                 Please ask our staff about wine pairings
               </Typography>
-              <Box className={classes.items}>
-                <Typography variant="h6">Rose - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Rose - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Rose - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Rose - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Rose - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Rose - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
+              {props.wines.map((wine) => (
+                <Box className={classes.items} key={wine._id}>
+                  <Typography variant="h5">
+                    {wine.name} - {wine.price}{" "}
+                  </Typography>
+                  <Typography variant="subtitle1">
+                    {wine.grape} - {wine.region}{" "}
+                  </Typography>
+                  <Typography variant="subtitle1">
+                    {wine.description}{" "}
+                  </Typography>
+                </Box>
+              ))}
             </Box>
           </Grid>
         </Grid>
@@ -105,4 +90,4 @@ const Entrees = () => {
   );
 };
 
-export default Entrees;
+export default Wines;

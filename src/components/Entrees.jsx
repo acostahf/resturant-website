@@ -1,14 +1,6 @@
 import React from "react";
 
-import {
-  Button,
-  Container,
-  Box,
-  Typography,
-  Grid,
-  Card,
-  CardMedia,
-} from "@material-ui/core";
+import { Container, Box, Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -51,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Entrees = () => {
+const Entrees = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -59,7 +51,11 @@ const Entrees = () => {
         <Grid container>
           <Grid xs={12} sm={12} md={6} lg={6} className={classes.imgContainer}>
             <Box className={classes.box}>
-              <img className={classes.media} src="/assets/steak-pic.jpg" />
+              <img
+                className={classes.media}
+                src="/assets/steak-pic.jpg"
+                alt=""
+              />
             </Box>
           </Grid>
           <Grid xs={12} sm={12} md={6} lg={6}>
@@ -67,30 +63,16 @@ const Entrees = () => {
               <Typography variant="h1" className={classes.h1}>
                 Entrees
               </Typography>
-              <Box className={classes.items}>
-                <Typography variant="h6">Steak - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Steak - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Steak - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Steak - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Steak - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
-              <Box className={classes.items}>
-                <Typography variant="h6">Steak - $12</Typography>
-                <Typography variant="subtitle1">Description</Typography>
-              </Box>
+              {props.mains.map((main) => (
+                <Box className={classes.items} key={main._id}>
+                  <Typography variant="h6">
+                    {main.name} - {main.price}{" "}
+                  </Typography>
+                  <Typography variant="subtitle1">
+                    {main.description}{" "}
+                  </Typography>
+                </Box>
+              ))}
             </Box>
           </Grid>
         </Grid>

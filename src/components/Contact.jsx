@@ -1,11 +1,11 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-import {
-  FormControl,
-  FormLabel,
-  FormHelperText,
-  TextField,
-} from "@material-ui/core";
+// import {
+//   FormControl,
+//   FormLabel,
+//   FormHelperText,
+//   TextField,
+// } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -25,13 +25,13 @@ const useStyles = makeStyles((theme) => ({
   container: {
     // background: "#90a  4ae",
     height: "50vh",
-    margin: theme.spacing(1),
+    // margin: theme.spacing(1),
     color: "white",
     margin: "100px",
   },
 }));
 
-export default function () {
+const Contact = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -51,4 +51,6 @@ export default function () {
       </Container>
     </div>
   );
-}
+};
+
+export default Contact;

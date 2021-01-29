@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function () {
+const About = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -29,4 +29,6 @@ export default function () {
       </Container>
     </div>
   );
-}
+};
+
+export default About;

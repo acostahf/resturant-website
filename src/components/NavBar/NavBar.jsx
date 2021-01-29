@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Button,
-  IconButton,
   Slide,
   useScrollTrigger,
   Typography,
@@ -11,9 +10,9 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import { Link, withRouter } from "react-router-dom";
-import About from "../About";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import About from "../About";
+// import { BrowserRouter as Router } from "react-router-dom";
 
 // import "../../pages/App/App.css";
 import "./NavBar.css";
@@ -46,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     background: "none",
   },
+  button: {
+    color: "#fff",
+  },
 }));
 
 export default function HideAppBar(props) {
@@ -59,26 +61,26 @@ export default function HideAppBar(props) {
             <Typography variant="h6" className={classes.title}>
               Hattrem
             </Typography>
-            <Button component={Link} to="/">
+            <Button component={Link} to="/" className={classes.button}>
               Home
             </Button>
-            <Button component={Link} to="/">
+            <Button component={Link} to="/" className={classes.button}>
               Gallery
             </Button>
 
-            <Button to="/" component={Link} to="/">
+            <Button component={Link} to="/" className={classes.button}>
               Story{" "}
             </Button>
-            <Button to="/" component={Link} to="/">
+            <Button component={Link} to="/" className={classes.button}>
               Visit{" "}
             </Button>
-            <Button to="/" component={Link} to="/">
+            <Button component={Link} to="/" className={classes.button}>
               Login{" "}
             </Button>
-            <Button>
+            <Button className={classes.button}>
               <InstagramIcon fontSize="small" />
             </Button>
-            <Button>
+            <Button className={classes.button}>
               <TwitterIcon fontSize="small" />
             </Button>
           </Toolbar>

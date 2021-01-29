@@ -10,8 +10,8 @@ import * as wineAPI from "../../services/wines-api";
 import NavBar from "../../components/NavBar/NavBar";
 import Hero from "../../components/Hero";
 import About from "../../components/About";
-import Menu from "../../components/Menu";
-import Order from "../../components/Order";
+// import Menu from "../../components/Menu";
+// import Order from "../../components/Order";
 import AdminPage from "../AdminPage";
 import Contact from "../../components/Contact";
 import Entrees from "../../components/Entrees";
@@ -68,20 +68,37 @@ class App extends Component {
             render={() => (
               <div>
                 <About />
-                <Entrees />
-                <Wines />
-                <Menu mains={this.state.mains} wines={this.state.wines} />
+                <Entrees mains={this.state.mains} />
+                <Wines wines={this.state.wines} />
+                {/* <Menu mains={this.state.mains} wines={this.state.wines} />
                 <Order
                   mains={this.state.mains}
                   wines={this.state.wines}
                   componentDidMount={this.componentDidMount}
                   onSubmit={this.onSubmit}
                   handleChange={this.handleChange}
-                />
+                /> */}
                 <Contact />
               </div>
             )}
           />
+          {/* <Route
+            path="/entrees"
+            render={(props) => (
+              <div>
+                <NavBar
+                  user={this.state.user}
+                  handlelogout={this.handlelogout}
+                />
+                <Entrees mains={this.state.mains} />
+              </div>
+            )}
+          /> */}
+          {/* <Route
+            path="/wines"
+            render={(props) => <Wines wines={this.state.wines} />}
+          /> */}
+          {/* <Route path="/about" render={(props) => <About />} /> */}
           <Route
             path="/AdminPage"
             render={(props) => <AdminPage {...props} />}
