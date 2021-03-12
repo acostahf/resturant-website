@@ -87,6 +87,7 @@ class App extends Component {
             render={(props) => (
               <div>
                 <Entrees mains={this.state.mains} />
+                <Contact />
               </div>
             )}
           />
@@ -95,6 +96,7 @@ class App extends Component {
             render={(props) => (
               <div>
                 <Wines wines={this.state.mains} />
+                <Contact />
               </div>
             )}
           />
@@ -103,6 +105,7 @@ class App extends Component {
             render={(props) => (
               <div>
                 <About />
+                <Contact />
               </div>
             )}
           />

@@ -11,7 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
+    height: "50vh",
     fontFamily: "Signika",
     display: "flex",
     alignItems: "center",
@@ -24,10 +24,14 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     // background: "#90a  4ae",
+    paddingTop: 50,
     height: "50vh",
     // margin: theme.spacing(1),
     color: "white",
     margin: "100px",
+  },
+  ptag: {
+    marginBottom: 0,
   },
 }));
 
@@ -45,7 +49,7 @@ const Contact = () => {
           123 Everywhere <br /> Austin, TX 78702{" "}
         </p>
         <h1>Hours</h1>
-        <p>
+        <p className={classes.ptag}>
           Mon - Thu, 8am - 10pm <br /> Frod - Sun, 8am - 10pm
         </p>
       </Container>
