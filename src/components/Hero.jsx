@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     minHeight: "50vh",
-
     display: "flex",
     flexDirection: "column",
     justifyContent: "Center",
@@ -46,6 +45,7 @@ const Hero = () => {
             component={Link}
             to="/entrees"
             variant="h1"
+            style={{ textDecoration: "none" }}
             className={classes.h1}
           >
             EAT
@@ -54,6 +54,7 @@ const Hero = () => {
             component={Link}
             to="/Wines"
             variant="h1"
+            style={{ textDecoration: "none" }}
             className={classes.h1}
           >
             DRINK
@@ -62,6 +63,7 @@ const Hero = () => {
             component={Link}
             to="/about"
             variant="h1"
+            style={{ textDecoration: "none" }}
             className={classes.h1}
           >
             VISIT

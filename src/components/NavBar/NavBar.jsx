@@ -52,22 +52,27 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HideAppBar(props) {
   const classes = useStyles();
+  const preventDefault = (event) => event.preventDefault();
 
   return (
     <div className={classes.root}>
       <HideOnScroll {...props}>
         <AppBar className={classes.appbar} elevation={0}>
           <Toolbar>
-            <Typography variant="h6" className={classes.title}>
-              Hattrem
-            </Typography>
+            <Link
+              href="/"
+              onClick={preventDefault}
+              className={classes.title}
+              style={{ textDecoration: "none" }}
+            >
+              <Typography variant="h6">Hattrem</Typography>
+            </Link>
             <Button component={Link} to="/" className={classes.button}>
               Home
             </Button>
             <Button component={Link} to="/" className={classes.button}>
               Gallery
             </Button>
-
             <Button component={Link} to="/" className={classes.button}>
               Story{" "}
             </Button>

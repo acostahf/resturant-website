@@ -82,23 +82,31 @@ class App extends Component {
               </div>
             )}
           />
-          {/* <Route
+          <Route
             path="/entrees"
             render={(props) => (
               <div>
-                <NavBar
-                  user={this.state.user}
-                  handlelogout={this.handlelogout}
-                />
                 <Entrees mains={this.state.mains} />
               </div>
             )}
-          /> */}
-          {/* <Route
+          />
+          <Route
             path="/wines"
-            render={(props) => <Wines wines={this.state.wines} />}
-          /> */}
-          {/* <Route path="/about" render={(props) => <About />} /> */}
+            render={(props) => (
+              <div>
+                <Wines wines={this.state.mains} />
+              </div>
+            )}
+          />
+          <Route
+            path="/about"
+            render={(props) => (
+              <div>
+                <About />
+              </div>
+            )}
+          />
+
           <Route
             path="/AdminPage"
             render={(props) => <AdminPage {...props} />}
